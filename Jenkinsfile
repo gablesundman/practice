@@ -1,10 +1,12 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
-                bat 'set'
+                sh 'node --version'
             }
         }
     }
