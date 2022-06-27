@@ -1,24 +1,30 @@
-
 pipeline {
     agent any
-    environment{
-        NEW_VERSION = '1.3.0'
-    }
+
     stages {
-        stage('build') {
+        stage('Hello') {
             steps {
-                echo 'building the application...'
-                echo "building version ${NEW_VERSION}"
+                echo 'Hello World'
             }
         }
-        stage('test') {
+        stage('Build') {
             steps {
-                echo 'testing the application...'
+                echo 'Building'
             }
         }
-        stage('deploy') {
+        stage('Deploy') {
             steps {
-                echo 'deploying the application...'
+                echo 'Deploying'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
             }
         }
     }
